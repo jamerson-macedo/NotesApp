@@ -52,7 +52,7 @@ class EditFragment : Fragment(R.layout.fragment_edit), MenuProvider {
             val notedesc = binding.editNoteDesc.text.toString().trim()
             if (notetitle.isNotEmpty()) {
 
-                val note = Note(currentNote.id, currentNote.title, currentNote.description)
+                val note = Note(currentNote.id, notetitle, notedesc)
                 viewModel.updateNote(note)
                 view.findNavController()
                     .popBackStack(R.id.homeFragment, false)
